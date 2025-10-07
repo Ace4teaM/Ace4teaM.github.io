@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-tooltip/dist/css/bulma-tooltip.min.css">
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <style>
+  .auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 500px;
+  }
+  .card-header {
+    height: 100px;
+  }
+  ul {
+     font-family: 'Arial', sans-serif;
+     font-size:12pt;
+     color: cornflowerblue;
+  }
+  li {
+     margin-top:10px;
+  }
+</style>
+<h1 class="title">Thomas AUGUEY</h1>
+<hr/>
+<div class="columns">
+  <div class="column is-3 mt-3">
+    <figure class="image" style="margin:auto;">
+        <img class="is-rounded" src="photo.png" alt="Logo">
+    </figure>
+  </div>
+  <div class="column is-1">
+  </div>
+  <div class="column">
+    <article class="message is-primary">
+        <div class="message-header">
+            <p class="has-text-right">Présentation personnelle</p>
+        </div>
+        <div class="message-body has-text-centered">
+            <p>
+            Passionné par les systèmes d’information, j’aime comprendre le parcours de la donnée (du circuit électronique à l’utilisateur final).
+            </p>
+            <p class="mt-3">
+            Mon expérience dans l’OT m’a familiarisé avec les systèmes industriels, tandis que mes projets IT nourrissent ma curiosité et renforcent mes compétences techniques.
+            Je recherche toujours à relier le monde physique et numérique à travers des solutions concrètes et intelligentes.
+            </p>
+        </div>
+    </article>
+  </div>
+  <div class="column is-1">
+  </div>
+  <div class="column is-2">
+    <p class="has-text-centered">
+        <a href="https://www.linkedin.com/in/thomas-auguey-70231b170" target="_blank">
+            <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/Ace4teaM" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+        </a>
+    </p>
+  </div>
+</div>
+
+<div class="box my-6">
+    <h2 class="title is-2 has-text-centered">Mes Compétences</h2>
+    <p class="mb-6 is-2 has-text-centered">Mes domaines de compétences favories.</p>
+
+<div class="columns mb-6 is-multiline">
+  <!-- Colonne 1 : Framework -->
+  <div class="column is-one-quarter has-text-centered">
+    <h3 class="title is-5" style="font-family: 'Courier New', monospace;">Framework</h3>
+    <ul>
+      <li>.NET / WPF</li>
+      <li>Win32 / MFC</li>
+      <li>ExpressJs / Vuetify</li>
+    </ul>
+  </div>
+
+  <!-- Colonne 2 : Outils -->
+  <div class="column is-one-quarter has-text-centered">
+    <h3 class="title is-5" style="font-family: 'Courier New', monospace;">Outils</h3>
+    <ul>
+      <li>Git bash</li>
+      <li>GitHub</li>
+      <li>Visual Studio</li>
+      <li>Arduino IDE</li>
+      <li>SQL-Server Profiler</li>
+    </ul>
+  </div>
+
+  <!-- Colonne 3 : Langages -->
+  <div class="column is-one-quarter has-text-centered">
+    <h3 class="title is-5" style="font-family: 'Courier New', monospace;">Langages</h3>
+    <ul>
+      <li>JavaScript ES6</li>
+      <li>Python</li>
+      <li>C#</li>
+      <li>SQL</li>
+      <li>C / C++</li>
+    </ul>
+  </div>
+
+  <!-- Colonne 4 : Autres -->
+  <div class="column is-one-quarter has-text-centered">
+    <h3 class="title is-5" style="font-family: 'Courier New', monospace;">Autres</h3>
+    <ul>
+      <li>Documentation</li>
+      <li>UI</li>
+      <li>REST APIs</li>
+      <li>Tests unitaires</li>
+      <li>Protocole OPC</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<div class="box my-6">
+    <h2 class="title is-2 has-text-centered">Mes Réalisations</h2>
+    <p class="mb-6 is-2 has-text-centered">Quelques exemples de réalisations personnelle.</p>
+    <div class="is-flex is-flex-wrap-wrap is-justify-content-center">
+        <div class="cell is-col-span-3">
+            <div class="card m-2">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <figure class="image mr-6 is-64x64">
+                        <img
+                            src="mescourses.png"
+                        />
+                        </figure>
+                        <p class="is-size-2">Mes-Courses</p>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p class="is-size-5 has-text-dark">Vous l'avez deviné ! Sous ce nom se cache un petit utilitaire pour échanger une liste de courses en temps réel avec différents utilisateurs.</p>
+                        <p class="is-size-6 has-text-grey-dark">L'Application supporte la synchronisation online/offline dans un environnement web mobile et desktop.</p>
+                        <p class="is-size-6 has-text-grey-dark">Mais pas que... l'objectif et de venir l'agrémenter de diverses fonctionalités très utiles au quotidien !</p>
+                        <p class="is-size-6 has-text-grey-dark">Diagrammes, fusion de code, structure de données, architecture réseau, ...</p>
+                        <div class="badges">
+                        <img src="https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D" alt="Vue.js">
+                        <img src="https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="column has-text-centered">
+                        <p><a class="has-text-centered" href="https://github.com/Ace4teaM/MesCourses">Voir le dépôt</a> <img title="Désolé pour le moment c'est privé !" src="https://img.shields.io/badge/Private-EE0000" width="40" height="40"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell is-col-span-3">
+            <div class="card m-2">
+                <div class="card-header">
+                    <div class="card-header-title">
+                    <figure class="image" style="margin:auto;">
+                    <img
+                        src="devapps-title.png"
+                        alt="DevApps"
+                    />
+                    </figure>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content has-text-justified">
+                        <p class="is-size-5 has-text-dark">DevApps est un projet ambitieux d'IDE <code>non-intrusif</code> à vos projets permettant d'assister le développement d'un projet informatique.</p>
+                        <p class="is-size-6 has-text-grey-dark">Vous modèlisez vos besoins/processus sous forme d'objets visuels. Chaque objet est scriptable et possède une structure de données naturellement éditable (texte).</p>
+                        <p class="is-size-6 has-text-grey-dark">Ainsi vous modélisez différentes partie de votre application sous forme de facettes exploitables grace à une collection d'objets communautaire (car oui, le logiciel ne vous impose pas de schéma de données tous les objets sont scriptés individuellement).</p>
+                        <p class="is-size-6 has-text-grey-dark">Diagrammes, fusion de code, structure de données, architecture réseau, ...</p>
+                        <div class="badges">
+                        <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#">
+                        <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dot-net&logoColor=white" alt=".NET">
+                        <img src="https://img.shields.io/badge/WPF-68217A?style=for-the-badge&logo=windows&logoColor=white" alt="WPF">
+                        <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-image">
+                </div>
+                <div class="card-footer">
+                    <div class="column has-text-centered">
+                        <p><a class="has-text-centered" href="https://github.com/Ace4teaM/DevApps">Voir le dépôt</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell is-col-span-3">
+            <div class="card m-2">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <figure class="image mr-6">
+                        <img
+                            src="animate.png"
+                        />
+                        </figure>
+                        <span class="is-size-2">Animate!</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p class="is-size-5 has-text-dark">Animate! est un outil de découpage et de visualisation en temps réel pour croquis animé.</p>
+                        <p class="is-size-6 has-text-grey-dark">L'outil est utile dans un cas d'utilisation particulier : vous dessinez le croquis d'une animation sur une page simple. Vous désirez avoir un aperçu de l'animation au fur et à mesure que vous dessinez.</p>
+                        <p class="is-size-6 has-text-grey-dark">Vous pouvez par exemple dessiner sur votre tablette puis visualiser sur l'écran de l'ordinateur l'animation avec rechargement à chaud des modifications.</p>
+                        <p class="is-size-6 has-text-grey-dark">Diagrammes, fusion de code, structure de données, architecture réseau, ...</p>
+                        <div class="badges">
+                        <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="C#">
+                        <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dot-net&logoColor=white" alt=".NET">
+                        <img src="https://img.shields.io/badge/WPF-68217A?style=for-the-badge&logo=windows&logoColor=white" alt="WPF">
+                        <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="column has-text-centered">
+                        <p><a class="has-text-centered" href="https://github.com/Ace4teaM/Animate">Voir le dépôt</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell is-col-span-3">
+            <div class="card m-2">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <figure class="image mr-6 is-64x64">
+                        <img
+                            src="smartportal.png"
+                        />
+                        </figure>
+                        <span class="is-size-2">Smart-Portal</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p class="is-size-5 has-text-dark">Ce projet d'automatisation vise à permettre l'ouverture et la fermeture d'un portail via l'utilisation de smart-tag.</p>
+                        <p class="is-size-6 has-text-grey-dark">Le principe est simple, le système arduino compatible BLE détecte à votre arrivé le SmartTag compatible présent sur vos vous ou votre voiture. En fonction de la présence (ou non) d'un obstacle le portail piloté par les entrées/sorties TOR active l'ouverture du portail ou portillon.</p>
+                        <p class="is-size-6 has-text-grey-dark">Il s'agit d'un cas particulier mais tout à fait adaptable à d'autre situations.</p>
+                        <p class="is-size-6 has-text-grey-dark">Diagrammes, fusion de code, structure de données, architecture réseau, ...</p>
+                        <div class="badges">
+                        <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white" alt="C++">
+                        <img src="https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white" alt="Arduino">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="column has-text-centered">
+                        <p><a class="has-text-centered" href="https://github.com/Ace4teaM/SmartPortal">Voir le dépôt</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell is-col-span-3">
+            <div class="card m-2">
+                <div class="card-header">
+                    <div class="card-header-title">
+                        <figure class="image mr-6 is-64x64">
+                        <img
+                            src="articles.png"
+                        />
+                        </figure>
+                        <span class="is-size-2">Articles</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p class="is-size-5 has-text-dark">Quelques articles en vrac rédigé au fur et à mesure du temps.</p>
+                        <p class="is-size-6 has-text-grey-dark">Présente quelques informations utiles au format Markdown.</p>
+                        <p class="is-size-6 has-text-grey-dark">Diagrammes, fusion de code, structure de données, architecture réseau, ...</p>
+                        <div class="badges">
+                        <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown Badge">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="column has-text-centered">
+                        <p><a class="has-text-centered" href="https://github.com/Ace4teaM/articles">Voir le dépôt</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+      </div>
+    </section>
+  </body>
+</html>
