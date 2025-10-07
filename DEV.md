@@ -26,7 +26,7 @@ Le site statique n'est pas directement visible depuis son fichier `index.html` !
 
 Pour exécution locale:
 
-`jekill serve`
+`jekyll serve --watch --force_polling`
 
 URL de test:
 
