@@ -6,4 +6,4 @@ Ce dépôt est utilisé pour générer mon projet de portfolio.
 ![Jekyll](https://img.shields.io/badge/Jekyll-8A2BE2)
 ![Markdown](https://img.shields.io/badge/Markdown-EEEEEE)
 
-Lien vers la page https://ace4team.github.io/me/
+Lien vers la page https://ace4team.github.io
