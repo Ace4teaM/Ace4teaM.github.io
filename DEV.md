@@ -8,7 +8,7 @@ Ce dépôt est utilisé pour générer mon projet de portfolio.
 
 ## Pré-requis
 
-Pour compiler la version distribuable de Jekyll nous avons besoin des outils Ruby et plus précisément sous Windows de la console WSL.
+Pour compiler la version distribuable de Jekyll nous avons besoin des outils Ruby et plus précisément sous Windows de la **console WSL**.
 
 ![](C:\Users\aceteam\source\repos\me\gem.jpg)
 
@@ -30,7 +30,7 @@ Pour exécution locale:
 
 URL de test:
 
-http://127.0.0.1:4000/me/
+http://127.0.0.1:4000
 
 
 
