@@ -42,3 +42,31 @@
       height: 80px;
     }
   }
+
+  /* Textes light/dark */
+
+  .has-text-intensity-1 {
+    color: #2b2b2b;
+    /* clair par défaut pour fond clair */
+  }
+
+  .has-text-intensity-2 {
+    color: #606060;
+    /* clair par défaut pour fond clair */
+  }
+
+  /* dark mode */
+  @media (prefers-color-scheme: dark) {
+    .has-text-intensity-1 {
+      color: #f0f0f0;
+      /* texte clair pour fond sombre */
+    }
+  }
+
+  /* dark mode */
+  @media (prefers-color-scheme: dark) {
+    .has-text-intensity-2 {
+      color: #A0A0A0;
+      /* texte clair pour fond sombre */
+    }
+  }
