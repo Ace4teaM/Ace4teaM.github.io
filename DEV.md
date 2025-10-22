@@ -16,7 +16,7 @@ Pour compiler la version distribuable de Jekyll nous avons besoin des outils Rub
 
 Pour construire la version distribuable:
 
-`jekill build`
+`jekyll build`
 
 Le dossier -site contient les fichiers distribuable.
 
