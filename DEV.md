@@ -24,9 +24,9 @@ Le dossier -site contient les fichiers distribuable.
 
 Le site statique n'est pas directement visible depuis son fichier `index.html` ! Il faudra tout de même utiliser un serveur web.
 
-Pour exécution locale:
+Pour exécution locale (depuis le terminal Ubuntu - WSL):
 
-`jekyll serve --watch --force_polling`
+`jekyll serve --livereload --watch --force_polling`
 
 URL de test:
 
