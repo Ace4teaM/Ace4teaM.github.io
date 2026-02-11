@@ -11,18 +11,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="styles.css">
+    <script src="./scripts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body>
-    <div class="page-a4">
+    <div id="commands">
+        <a href="/">
+            <span class="left"></span>
+        </a>
+        <div class="filters">
+            <div>
+                <button id="btn-filter-general" class="button button--selected">Général</button>
+                <button id="btn-filter-web" class="button">Développement Web</button>
+                <button id="btn-filter-desktop" class="button">Développement Système</button>
+                <button id="btn-filter-autom" class="button">Réseau et Automatisme</button>
+            </div>
+            <p class="info">Choisissez  un filtrage pour mettre en avant mes compétences liés à une spécialisation</p>
+        </div>
+        <div class="downloads">
+            <span>Télécharger la version PDF</span>
+            <div>
+                <button class="button button--download pdf" id="btn-to-pdf"><span>PDF</span></button>
+                <button class="button button--download" id="btn-to-pdf-ats">PDF (ATS-friendly)</button>
+                <button class="button button--download" id="btn-to-json">JSON</button>
+            </div>
+        </div>
+    </div>
+    <div id="page" class="page-a4">
         <header>
             <div class="header">
-                <h1>Thomas AUGUEY</h1>
-                <h2>Développeur Full Stack</h2>
-            </div>
-            <div class="download">
-                <a href="CV Thomas AUGUEY - Développeur Full Stack.pdf"><img src="download.png"
-                        title="Téléchargez ce CV au format PDF"></a>
+                <h1 id="name">Thomas AUGUEY</h1>
+                <h2 id="title">Technicien Informatique industriel</h2>
             </div>
         </header>
         <aside>
@@ -33,22 +54,19 @@
                 <h1><i class="fa-solid fa-location-pin"></i>Coordonnées</h1>
                 <section>
                     <h2>E-mail</h2>
-                    <p>thomas.auguey@hotmail.com</p>
+                    <p id="email" class="masked">[AFFICHER]</p>
                 </section>
                 <section>
                     <h2>Téléphone</h2>
-                    <p>06.61.74.57.79</p>
+                    <p id="phone" class="masked">[AFFICHER]</p>
                 </section>
                 <section>
                     <h2>Adresse</h2>
-                    <p>2 rue de Groucy, La Chapelle Enjuger. 50570 THEREVAL</p>
+                    <p id="location">2 rue de Groucy, La Chapelle Enjuger. 50570 THEREVAL</p>
                 </section>
                 <section>
                     <h2>Linkedin</h2>
-                    <p>
-                        <a
-                            href="https://www.linkedin.com/in/thomas-auguey-70231b1">https://www.linkedin.com/in/thomas-auguey-70231b1</a>
-                    </p>
+                    <a href="https://www.linkedin.com/in/thomas-auguey-70231b1">https://www.linkedin.com/in/thomas-auguey-70231b1</a>
                     <h2>Portfolio</h2>
                     <p>Pour en savoir plus sur moi !</p>
                     <a href="https://ace4team.github.io/">https://ace4team.github.io/</a>
@@ -56,38 +74,40 @@
             </div>
             <div class="certificats">
                 <h1><i class="fa-solid fa-certificate"></i>Certificats</h1>
-                <section>
-                    <p>[Développeur Logiciel]<br />(Code RNCP 38038 , Nv 6 : Bac+3/4)</p>
-                    <p>[Concepteur Développeur Logiciel]<br />(RNCP 37674, Nv 5 : Bac+2)</p>
+                <section id="certificats">
+                    <p>[Concepteur Développeur Logiciel]<br />(Code RNCP 38038 , Nv 6 : Bac+3/4)</p>
+                    <p>[Développeur Logiciel]<br />(RNCP 37674, Nv 5 : Bac+2)</p>
                 </section>
             </div>
             <div class="competences">
                 <h1><i class="fa-solid fa-bolt"></i>Compétences</h1>
                 <h2>Hard Skills:</h2>
-                <ul class="hard-skills">
-                    <li>Langages :
-                        <span>C/C++</span><span>C#</span><span>JavaScript</span><span>TypeScript</span><span>Python</span>
-                    </li>
-                    <li>Frameworks : <span>.NET</span><span>React</span><span>Node.js</span> <span>WPF</span></li>
-                    <li>Bases de données : <span>SQL Server</span> <span>PostgreSQL</span></li>
-                    <li>Outils : <span>Git</span> <span>Docker</span> <span>CI/CD</span></li>
-                    <li>IA (En Cours): <span>LLM</span> <span>OpenAI API</span> <span>LangChain</span> <span>RAG</span>
-                    </li>
-                    <li>Méthodes : <span>REST</span> <span>Architecture Logiciel</span></li>
+                <ul id="hardkills">
+                    <li data-filter="desktop web">Programmation objet</li>
+                    <li>Base de données</li>
+                    <li data-filter="desktop web">Méthode Merise</li>
+                    <li data-filter="web">Full-Stack Framework</li>
+                    <li data-filter="web">API REST</li>
+                    <li data-filter="desktop">Programmation système</li>
+                    <li data-filter="autom">Intégration supervision</li>
+                    <li data-filter="autom">Programmation automate</li>
+                    <li data-filter="autom">Réseau</li>
                 </ul>
                 <h2>Soft Skills:</h2>
-                <ul>
+                <ul id="softkills">
                     <li>Communication</li>
                     <li>Autonomie</li>
                     <li>Esprit d’analyse</li>
                     <li>Résolution de problèmes</li>
                     <li>Travail en équipe</li>
                     <li>Adaptabilité</li>
+                    <li data-filter="autom">Habilitation electrique</li>
+                    <li>SST, Extincteur</li>
                 </ul>
             </div>
             <div class="langues">
                 <h1><i class="fa-solid fa-language"></i>Langues</h1>
-                <section>
+                <section id="langues">
                     <div>
                         <h2>Français</h2>
                         <p>Maternelle</p>
@@ -101,23 +121,25 @@
             </div>
         </aside>
         <main>
-            <div class="experiences">
+            <div id="experiences" class="experiences page-break">
                 <h1><i class="fa-solid fa-clipboard-check"></i>Experiences</h1>
-                <section class="experience">
+                <section class="experience" data-filter="desktop autom">
                     <h2><i class="point"></i>Informatique Industriel</h2>
                     <p>ISIGNY-SAINTE-MÈRE, Isigny-sur-mer</p>
-                    <span class="date"><span>CDI</span><BR />05/2023 à 09/2025</span>
+                    <span class="date"><span>CDI</span><BR />05/2023 à 09/2025<BR /><strong>2 ANS</strong></span>
                     <ul>
-                        <li>Développement C# .NET</li>
-                        <li>Développement Automate/Supervision</li>
-                        <li>Sécurisation du réseau industriel</li>
-                        <li>Déploiement et maintenance des installations industriels</li>
+                        <li>Projet <strong>Inventaire matériel</strong> (Application Desktop <span class="tag">.NET/WPF</span>, Mobile <span class="tag">.NET/Xamarin</span>, BDD <span class="tag">SQL Server</span>)</li>
+                        <li data-filter="autom">Intégration Supervision <span class="tag">Visionner</span></li>
+                        <li data-filter="autom">Configuration switchs <span class="tag">Huawei S57</span>, passerelle <span class="tag">Fortinet</span></li>
+                        <li data-filter="autom">Déploiement supervision réseau <span class="tag">PRTG</span></li>
+                        <li data-filter="autom">Mise en place VPN FortiClient</li>
+                        <li data-filter="autom">Schématisation réseau logique / physique</li>
                     </ul>
                     <div class="note">
-                        <p>Issu du monde industriel, j’ai intégré l’entreprise d’un client sur un poste polyvalent,
-                            combinant des missions techniques variées.</p>
-                        <p>Ma mission principale consistait à reprendre et faire évoluer le réseau informatique
-                            industriel existant afin de l’aligner avec les préconisations en matière de cybersécurité.
+                        <p>Issu du monde industriel, j’ai intégré cette entreprise sur un poste polyvalent,
+                            combinant des missions techniques et variées.</p>
+                        <p>Ma principale activité consistait à améliorer le réseau informatique
+                            industriel existant vers les préconisations en matière de cybersécurité.
                         </p>
                         <p>En parallèle, j’ai assuré l’assistance aux utilisateurs du parc informatique, développé des
                             interfaces entre les systèmes MES et les outils de production, et mis en place une
@@ -126,14 +148,14 @@
                     </div>
                 </section>
 
-                <section class="experience">
+                <section class="experience" data-filter="web">
                     <h2><i class="point"></i>Développeur Web</h2>
                     <p>LECAPITAINE, Saint Lô</p>
-                    <span class="date"><span>CDI</span><BR />01/2023 à 03/2023</span>
+                    <span class="date"><span>CDI</span><BR />01/2023 à 03/2023<BR /><strong>3 MOIS</strong></span>
                     <ul>
-                        <li>Développement Front React / NodeJS</li>
-                        <li>Développement Back C# ASP DotNet</li>
-                        <li>Analyse Fonctionnelle, Documentation, Recueil du besoin</li>
+                        <li>Front-End <span class="tag">React / NodeJS</span><span class="tag">TypeScript</span></li>
+                        <li>Back-End <span class="tag">ASP.Net</span><span class="tag">Entity Framework</span></li>
+                        <li>Analyse Fonctionnelle et travail avec le service automatisme</li>
                     </ul>
                     <div class="note">
                         <p>Ma mission consistait à concevoir et implémenter des fonctionnalités Front-End et Back-End au
@@ -141,20 +163,19 @@
                             de pipelines CI/CD.</p>
                         <p>Cette expérience m’a permis d’évoluer au sein d’un service dédié au développement applicatif,
                             utilisant principalement les technologies C#, React et Node.js.</p>
+                        <p>Malgré un besoin de changement cette expérience enrichissante ma permis d'intégrer un service développement Web compétant.</p>
                     </div>
                 </section>
 
-                <section class="experience">
-                    <h2><i class="point"></i>Développeur Supervision</h2>
+                <section class="experience" data-filter="autom desktop">
+                    <h2><i class="point"></i>Développeur/Intégrateur Supervision</h2>
                     <p>ASPI (SIT), Saint Lô</p>
-                    <span class="date"><span>CDI</span><BR />03/2014 à 12/2022</span>
+                    <span class="date"><span>CDI</span><BR />03/2014 à 12/2022<BR /><strong>9 ANS</strong></span>
                     <ul>
-                        <li>Chargé de Développement logiciel en process industriel (supervision, communication,
-                            statistiques, traçabilité)</li>
-                        <li>Technologies: C++, C#, SQL, UML, OPC, Windows, WPF</li>
-                        <li>Développement Logiciel : SCADA, Gestionnaires, Services</li>
-                        <li>Développement Base de données SQL</li>
-                        <li>Documentation, Rapports, Interventions sur site</li>
+                        <li>Développement supervision <strong>Visionner</strong> <span class="tag">C++/MFC</span> <span class="tag">OPC</span></li>
+                        <li>Développement des outils clients (gestionnaire de recettes, base de données, service de traçabilité) <span class="tag">WPF</span> <span class="tag">.NET</span> <span class="tag">Sql Server</span></li>
+                        <li data-filter="autom">Programmation automates Schneider <span class="tag">Ladder/Structured Text</span> <span class="tag">Modicon</span><span class="tag">Unity</span> <span class="tag">Control-Expert</span></li>
+                        <li>Documentation, Rapports, Mise en service</li>
                     </ul>
                     <div class="note">
                         <p>Reprise et évolution d’un logiciel de supervision C++/MFC au sein d’une société spécialisée
@@ -167,23 +188,22 @@
                 <section class="experience">
                     <h2><i class="point"></i>Technicien Support Informatique</h2>
                     <p>EURIWARE, Equeurdreville</p>
-                    <span class="date"><span>CDD</span><BR />02/2013 à 08/2013</span>
+                    <span class="date"><span>CDD</span><BR />02/2013 à 08/2013<BR /><strong>6 MOIS</strong></span>
                     <ul>
-                        <li>Assistance informatique / Hotline</li>
+                        <li>Assistance informatique / Hotline <span class="tag">Remote Desktop</span></li>
                         <li>Gestion et résolution de problématiques informatiques</li>
                     </ul>
                     <div class="note">
-                        <p>Support informatique à distance auprès des utilisateurs internes de la société Areva
-                            (nouvellement Orano).</p>
+                        <p>Support informatique à distance auprès des utilisateurs internes de la société Areva (nouvellement Orano).</p>
                     </div>
                 </section>
 
-                <section class="experience">
+                <section class="experience" data-filter="desktop">
                     <h2><i class="point"></i>Développeur Logiciel</h2>
-                    <p>QUERTECH INGENIERIE, Cean</p>
-                    <span class="date"><span>Stage</span><BR />10/2012 à 12/2012</span>
+                    <p>QUERTECH INGENIERIE, Caen</p>
+                    <span class="date"><span>Stage</span><BR />10/2012 à 12/2012<BR /><strong>2 MOIS</strong></span>
                     <ul>
-                        <li>Développement d’une application de gestion (C++/Qt)</li>
+                        <li>Développement d’une application de gestion <span class="tag">C++/Qt</span></li>
                         <li>Rédaction du guide utilisateur / dossier technique</li>
                     </ul>
                     <div class="note">
@@ -192,33 +212,88 @@
                         <p>Reprise et évolution d’un logiciel interne permettant la communication des déplacements X/Y
                             vers la machine et la gestion des dossiers clients.</p>
                     </div>
+                </section>
 
+                <section class="experience" data-filter="web">
+                    <h2><i class="point"></i>Développeur Web</h2>
+                    <p>ID-INFORMATIK, Cherbourg</p>
+                    <span class="date"><span>Entrepreneur</span><BR />01/2010 à 01/2012<BR /><strong>2 ANS</strong></span>
+                    <ul>
+                        <li>Développement d’un Framework Web <span class="tag">WebFramework</span></li>
+                        <li>Réalisation de sites Internet <span class="tag">PHP</span> <span class="tag">HTML/CSS</span> <span class="tag">PostgreSQL</span></li>
+                        <li>Dépannage informatique</li>
+                    </ul>
+                    <div class="note">
+                        <p>Cette expérience auto-entrepreneur ma permis d'améliorer mes compétences Web et de me confronter au marché du travail.</p>
+                    </div>
+                </section>
+                
+                <section class="experience" data-filter="web">
+                    <h2><i class="point"></i>Webmaster</h2>
+                    <p>KALINKA, Cherbourg</p>
+                    <span class="date"><span>CDD</span><BR />08/2007 à 11/2007<BR /><strong>3 MOIS</strong></span>
+                    <ul>
+                        <li>Installation et maintenance d’un site e-commerce <span class="tag">os-commerce</span></li>
+                        <li>Création du catalogue</li>
+                        <li>Création des publicités et retouches d’images</li>
+                    </ul>
+                    <div class="note">
+                        <p>Cette expérience ma permis de prendre en main la gestion d'un outils de vente en ligne.</p>
+                    </div>
                 </section>
             </div>
-            <div class="etudes">
-                <h1><i class="fa-solid fa-graduation-cap"></i>Études</h1>
-                <section class="etude">
-                    <h2><i class="point"></i>Développeur IA</h2>
-                    <p>OpenClassrooms, A Distance</p>
-                    <span class="date">11/2025 à maintenant</span>
+            <div id="studies" class="etudes page-break">
+                <h1><i class="fa-solid fa-graduation-cap"></i>Formations</h1>
+                <section class="etude" data-filter="web desktop">
+                    <h2><i class="point"></i>Formation Concepteur-Développeur IA</h2>
+                    <p>OpenClassrooms, À Distance</p>
+                    <span class="date">11/2025 à maintenant<BR /><strong>1 AN</strong></span>
                     <ul>
-                        <li>Développer des interfaces Front-End HTML/CSS/JS</li>
-                        <li>Maitriser le Framework React</li>
-                        <li>Intégrer des services IA</li>
-                        <li>Optimiser la gestion et la visualisation des données</li>
-                        <li>Appliquer les algorithmes de machine learning (modèles supervisés et non supervisés)</li>
-                        <li>Développer des agents intelligents et des fonctionnalités de RAG (Retrieval-Augmented
-                            Generation)</li>
+                        <li>Développer des interfaces Front-End <span class="tag">HTML/CSS</span><span class="tag">Javascript</span></li>
+                        <li>Maitriser le Framework <span class="tag">Next.js/React</span><span class="tag">Express.js</span></li>
+                        <li>Intégrer des services IA <span class="tag">API REST</span></li>
+                        <li>Gérer et la visualiser des données <span class="tag">Python</span><span class="tag">Pandas/Numpy</span></li>
+                        <li>Appliquer les algorithmes de machine learning (modèles supervisés et non supervisés) <span class="tag">LLM</span> <span class="tag">API</span> <span class="tag">LangChain</span></li>
+                        <li>Développer des agents intelligents et des fonctionnalités de RAG (Retrieval-Augmented-Generation) <span class="tag">RAG</span></li>
+                    </ul>
+                </section>
+                
+                <section class="etude" data-filter="autom">
+                    <h2><i class="point"></i>Formation Wonderware AppServer</h2>
+                    <p>Wonderware, Lyon</p>
+                    <span class="date">11/2017<BR /><strong>2 SEM</strong></span>
+                    <ul>
+                        <li>Utilisation du logiciel de supervision <span class="tag">Application Server 2104R2</span></li>
+                        <li>Utilisation du logiciel de supervision <span class="tag">Intouch pour SP 2104R2</span></li>
+                    </ul>
+                </section>
+                
+                <section class="etude" data-filter="autom">
+                    <h2><i class="point"></i>Formation PC Vue</h2>
+                    <p>ARC Informatique, Saint-Lô</p>
+                    <span class="date">03/2016<BR /><strong>1 SEM</strong></span>
+                    <ul>
+                        <li>Utilisation du logiciel de supervision <span class="tag">GSI</span></li>
+                    </ul>
+                </section>
+                
+                <section class="etude" data-filter="autom">
+                    <h2><i class="point"></i>Formation Progiciel GSI</h2>
+                    <p>Ordinal Software, Antony</p>
+                    <span class="date">06/2014<BR /><strong>4 JR</strong></span>
+                    <ul>
+                        <li>Utilisation du logiciel de supervision <span class="tag">PC Vue</span></li>
                     </ul>
                 </section>
 
-                <section class="etude">
-                    <h2><i class="point"></i>Développeur logiciel</h2>
+                <section class="etude" data-filter="web desktop">
+                    <h2><i class="point"></i>Formation Développeur logiciel</h2>
                     <p>AFPA, Cean</p>
-                    <span class="date">01/2012 à 09/2012</span>
+                    <span class="date">01/2012 à 09/2012<BR /><strong>9 MOIS</strong></span>
                     <ul>
-                        <li>Développement d’une application de gestion (C++/Qt)</li>
-                        <li>Rédaction du guide utilisateur / dossier technique</li>
+                        <li>Développer des interfaces Front-End<span class="tag">C++</span> <span class="tag">Qt</span></li>
+                        <li>Développer des interfaces Desktop<span class="tag">Java</span> <span class="tag">Swing</span></li>
+                        <li>Cahier des charges / Documentation / Conception<span class="tag">Merise/UML</span></li>
                     </ul>
                 </section>
             </div>
